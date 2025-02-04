@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">fragmentweather</string>
+    <string name="temp_default">-22°С</string>
+    <string name="date_default">Сегодня</string>
+    <string name="humidity">Влажность:</string>
+    <string name="humidity_value">75%</string>
+    <string name="wind">Скорость ветра:</string>
+    <string name="wind_value">5 м/с</string>
+    <string name="weather_icon">Иконка погоды</string>
+</resources>
