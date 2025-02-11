@@ -8,16 +8,15 @@
     android:layout_margin="8dp">
 
     <TextView
-        android:id="@+id/tv_date"
-        android:layout_width="0dp"
+        android:id="@+id/city"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:text="@string/date_default"
         android:textAlignment="textStart"
         android:textColor="@color/black"
         android:textSize="14pt"
-        android:layout_marginStart="8dp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:layout_marginEnd="40dp"
+        android:layout_weight="0"/>
 
     <TextView
         android:id="@+id/tv_temp"

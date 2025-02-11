@@ -7,11 +7,35 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <LinearLayout
+        android:id="@+id/add_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:background="@color/design_default_color_secondary_variant">
+
+        <Spinner
+            android:id="@+id/city_spinner"
+            android:layout_width="264dp"
+            android:layout_height="54dp"
+            android:textSize="20pt"
+            android:background="@color/cardview_light_background"/>
+
+        <Button
+            android:id="@+id/loadWeatherButton"
+            android:layout_width="261dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text="Узнать погоду" />
+    </LinearLayout>
     <FrameLayout
         android:id="@+id/frame_container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@+id/button_container" />
+        android:layout_above="@+id/button_container"
+        android:layout_below="@+id/add_container"/>
 
     <LinearLayout
         android:id="@+id/button_container"
