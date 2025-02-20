@@ -1,17 +1,19 @@
 package com.example.fragmentweather
 
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.fragmentweather.WeatherAdapterFull.WeatherViewHolder
 
-class WeatherAdapterShort(private val weatherList: List<String>) : RecyclerView.Adapter<WeatherAdapterShort.WeatherViewHolder>() {
-
+class WeatherAdapterShort(private val weather: List<Weather_>, context: Context) : RecyclerView.Adapter<WeatherAdapterShort.WeatherViewHolder>() {
+    private val cities = context.resources.getStringArray(R.array.cities_names)
     class WeatherViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val tempTextView: TextView = view.findViewById(R.id.tv_temp)
-        val dateTextView: TextView = view.findViewById(R.id.tv_date)
+        val city: TextView = view.findViewById(R.id.city)
         val weatherImageView: ImageView = view.findViewById(R.id.img_weather)
     }
 
@@ -21,22 +23,27 @@ class WeatherAdapterShort(private val weatherList: List<String>) : RecyclerView.
     }
 
     override fun onBindViewHolder(holder: WeatherViewHolder, position: Int) {
-        val weatherInfo = weatherList[position]
-        val parts = weatherInfo.split(" - ")
-        val date = parts[0].substringBefore(":")
-        val temp = parts[0].substringAfter(": ").trim()
-        val condition = parts[1].trim()
-
-        holder.dateTextView.text = date
-        holder.tempTextView.text = temp
-
-        when (condition) {
-            "Солнечно" -> holder.weatherImageView.setImageResource(R.drawable.sunny)
-            "Дождь" -> holder.weatherImageView.setImageResource(R.drawable.rainy)
-            "Облачно" -> holder.weatherImageView.setImageResource(R.drawable.cloudy)
-            else -> holder.weatherImageView.setImageResource(R.drawable.cloudy)
+        val weatherInfo = weather[position]
+        when (weatherInfo.name) {
+            "Irkutsk" -> holder.city.text = cities[0]
+            "Paris" -> holder.city.text = cities[1]
+            "London" -> holder.city.text = cities[2]
+            "New York" -> holder.city.text = cities[3]
+            else -> holder.city.text = weatherInfo.name
+        }
+        holder.tempTextView.text = String.format("%.0f", (weatherInfo.main.temp)) + "°С"
+        when (weatherInfo.weather[0].main) {
+            "Clear" -> holder.weatherImageView.setImageResource(R.drawable.sunny)
+            "Rain" -> holder.weatherImageView.setImageResource(R.drawable.rainy)
+            "Drizzle" -> holder.weatherImageView.setImageResource(R.drawable.rainy)
+            "Thunderstorm" -> holder.weatherImageView.setImageResource(R.drawable.storm)
+            "Snow" -> holder.weatherImageView.setImageResource(R.drawable.snowy)
+            "Mist" -> holder.weatherImageView.setImageResource(R.drawable.foggy)
+            "Fog" -> holder.weatherImageView.setImageResource(R.drawable.foggy)
+            "Clouds" -> holder.weatherImageView.setImageResource(R.drawable.cloudy)
+            else -> holder.weatherImageView.setImageResource(R.drawable.sunny)
         }
     }
 
-    override fun getItemCount() = weatherList.size
+    override fun getItemCount() = weather.size
 }

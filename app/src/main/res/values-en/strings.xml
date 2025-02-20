@@ -1,0 +1,34 @@
+<resources>
+    <string name="app_name">Settings</string>
+    <string name="temp_default">-22°С</string>
+    <string name="humidity">Humidity:</string>
+    <string name="wind">Wind:</string>
+    <string name="search">Predict weather</string>
+    <string name="weather_icon">Weather icon</string>
+    <string name="shortage">Short</string>
+    <string name="fully">Full</string>
+    <string name="api_key">d6843ab8ee963f5d372296dfff62aed7</string>
+    <string-array name="cities_array">
+        <item>Irkutsk</item>
+        <item>Paris</item>
+        <item>London</item>
+        <item>New York</item>
+    </string-array>
+    <string-array name="cities_names">
+        <item>Irkutsk</item>
+        <item>Paris</item>
+        <item>London</item>
+        <item>New York</item>
+    </string-array>
+    <string-array name="wind_directions">
+        <item>North wind</item>
+        <item>North-East wind</item>
+        <item>East wind</item>
+        <item>South-East wind</item>
+        <item>South wind</item>
+        <item>South-West wind</item>
+        <item>West wind</item>
+        <item>North-West wind</item>
+        <item>Unknown direction</item>
+    </string-array>
+</resources>

@@ -1,10 +1,34 @@
 <resources>
-    <string name="app_name">fragmentweather</string>
+    <string name="app_name">Настройки</string>
     <string name="temp_default">-22°С</string>
-    <string name="date_default">Сегодня</string>
     <string name="humidity">Влажность:</string>
-    <string name="humidity_value">75%</string>
-    <string name="wind">Скорость ветра:</string>
-    <string name="wind_value">5 м/с</string>
+    <string name="wind">Ветер:</string>
+    <string name="search">Узнать погоду</string>
     <string name="weather_icon">Иконка погоды</string>
+    <string name="shortage">Кратко</string>
+    <string name="fully">Подробно</string>
+    <string name="api_key">d6843ab8ee963f5d372296dfff62aed7</string>
+    <string-array name="cities_array">
+        <item>Irkutsk</item>
+        <item>Paris</item>
+        <item>London</item>
+        <item>New York</item>
+    </string-array>
+    <string-array name="cities_names">
+        <item>Иркутск</item>
+        <item>Париж</item>
+        <item>Лондон</item>
+        <item>Нью-Йорк</item>
+    </string-array>
+    <string-array name="wind_directions">
+        <item>Северный ветер</item>
+        <item>Северо-восточный ветер</item>
+        <item>Восточный ветер</item>
+        <item>Юго-восточный ветер</item>
+        <item>Южный ветер</item>
+        <item>Юго-западный ветер</item>
+        <item>Западный ветер</item>
+        <item>Северо-западный ветер</item>
+        <item>Неизвестное направление</item>
+    </string-array>
 </resources>
